@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sheriff Writers - Academic Excellence & Professional Support</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5dc; /* Beige */
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #ffdd57; /* Gold */
+      color: #001f54; /* Navy Blue */
+    }
+
+    .btn-primary:hover {
+      background-color: #e6c84f;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-secondary {
+      background-color: #0a3758; /* Muted Navy Blue */
+      color: #f5f5dc; /* Beige */
+    }
+
+    .btn-secondary:hover {
+      background-color: #001f54; /* Navy Blue */
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header */
+    header {
+      background-color: #001f54; /* Navy Blue */
+      color: #f5f5dc; /* Beige */
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo i {
+      margin-right: 10px;
+      color: #ffdd57; /* Gold */
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #f5f5dc;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: #f5f5dc; /* Beige */
+      font-weight: 500;
+      transition: color 0.3s ease;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    nav ul li a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #ffdd57; /* Gold */
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffdd57; /* Gold */
+    }
+
+    nav ul li a:hover:after {
+      width: 100%;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 31, 84, 0.8), rgba(0, 31, 84, 0.8)), url('https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: #f5f5dc;
+      padding: 8rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      animation: fadeInDown 1s ease;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      animation: fadeIn 1.5s ease;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #001f54; /* Navy Blue */
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background-color: #ffdd57; /* Gold */
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-content {
+      text-align: center;
+      margin: 0 auto;
+      max-width: 800px;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* About Section */
+    .about {
+      background-color: #fff;
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: #001f54; /* Navy Blue */
+      margin-bottom: 1rem;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #001f54; /* Navy Blue */
+    }
+
+    /* Why Choose Us Section */
+    .why-choose {
+      background-color: #001f54; /* Navy Blue */
+      color: #f5f5dc; /* Beige */
+    }
+
+    .why-choose .section-title {
+      color: #f5f5dc; /* Beige */
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      color: #ffdd57; /* Gold */
+      margin-bottom: 1rem;
+    }
+
+    .feature-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #ffdd57; /* Gold */
+    }
+
+    /* Pricing Section */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .pricing-header {
+      background-color: #001f54; /* Navy Blue */
+      color: #f5f5dc; /* Beige */
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .pricing-name {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-price {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .pricing-period {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .pricing-features {
+      padding: 2rem;
+    }
+
+    .pricing-features ul {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-features ul li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .pricing-features ul li:before {
+      content: '✓';
+      color: #001f54; /* Navy Blue */
+      margin-right: 0.5rem;
+    }
+
+    .pricing-btn {
+      display: block;
+      text-align: center;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      background-color: #f9f9f9;
+    }
+
+    .testimonials-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .testimonial-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .testimonial-text:before {
+      content: '"';
+      font-size: 3rem;
+      color: #001f54; /* Navy Blue */
+      position: absolute;
+      left: 0;
+      top: -1rem;
+      opacity: 0.2;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #001f54; /* Navy Blue */
+      color: #f5f5dc; /* Beige */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+
+    .testimonial-info h4 {
+      margin-bottom: 0.2rem;
+    }
+
+    .testimonial-info p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* FAQ Section */
+    .faq {
+      background-color: #001f54; /* Navy Blue */
+      color: #f5f5dc; /* Beige */
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(245, 245, 220, 0.2);
+      padding-bottom: 1.5rem;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: #ffdd57; /* Gold */
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question i {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-answer {
+      color: #f5f5dc; /* Beige */
+      display: none;
+      padding-top: 0.5rem;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(rgba(0, 31, 84, 0.9), rgba(0, 31, 84, 0.9)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: #f5f5dc; /* Beige */
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #001f54; /* Navy Blue */
+      color: #f5f5dc; /* Beige */
+      padding: 4rem 2rem 2rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-bottom: 3rem;
+    }
+
+    .footer-column h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: #ffdd57; /* Gold */
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-column h3:after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      background-color: #ffdd57; /* Gold */
+      bottom: 0;
+      left: 0;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-column ul li a {
+      color: #f5f5dc; /* Beige */
+      transition: color 0.3s ease;
+    }
+
+    .footer-column ul li a:hover {
+      color: #ffdd57; /* Gold */
+    }
+
+    .footer-column p {
+      margin-bottom: 1rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(245, 245, 220, 0.1);
+      border-radius: 50%;
+      color: #f5f5dc; /* Beige */
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background-color: #ffdd57; /* Gold */
+      color: #001f54; /* Navy Blue */
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(245, 245, 220, 0.1);
+    }
+
+    .footer-bottom p {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #f5f5dc; /* Beige */
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #ffdd57; /* Gold */
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffdd57; /* Gold */
+      color: #001f54; /* Navy Blue */
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: #e6c84f;
+      transform: translateY(-3px);
+    }
+
+    /* Login/Signup Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1001;
+      overflow: auto;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content {
+      background-color: #f5f5dc;
+      margin: 5% auto;
+      padding: 2rem;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+      animation: slideDown 0.4s ease;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.5rem;
+      color: #001f54;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .close-modal:hover {
+      color: #ffdd57;
+      transform: scale(1.1);
+    }
+
+    .modal-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-header h2 {
+      color: #001f54;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-header p {
+      color: #666;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #001f54;
+      font-weight: 500;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: border 0.3s ease;
+    }
+
+    .form-group input:focus {
+      border-color: #001f54;
+      outline: none;
+    }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .form-footer p {
+      margin-bottom: 1rem;
+      color: #666;
+    }
+
+    .switch-form {
+      color: #001f54;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .switch-form:hover {
+      color: #ffdd57;
+      text-decoration: underline;
+    }
+
+    .social-login {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .social-login p {
+      margin-bottom: 1rem;
+      color: #666;
+      position: relative;
+    }
+
+    .social-login p:before,
+    .social-login p:after {
+      content: '';
+      position: absolute;
+      width: 40%;
+      height: 1px;
+      background-color: #ddd;
+      top: 50%;
+    }
+
+    .social-login p:before {
+      left: 0;
+    }
+
+    .social-login p:after {
+      right: 0;
+    }
+
+    .social-login-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .social-btn i {
+      margin-right: 0.5rem;
+    }
+
+    .google-btn {
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+
+    .google-btn:hover {
+      background-color: #f1f1f1;
+    }
+
+    .facebook-btn {
+      background-color: #3b5998;
+      color: white;
+    }
+
+    .facebook-btn:hover {
+      background-color: #344e86;
+    }
+
+    /* Animation for modal */
+    @keyframes slideDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .header-container {
+        padding: 0 1rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #001f54; /* Navy Blue */
+        padding: 1rem 0;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+      }
+
+      nav.active {
+        transform: translateY(0);
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 0.8rem 0;
+      }
+
+      .hero {
+        padding: 5rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .auth-buttons {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .pricing-grid, .services-grid, .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeLoginModal">&times;</span>
+      <div class="modal-header">
+        <h2>Welcome Back</h2>
+        <p>Log in to access your account</p>
+      </div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Log In</button>
+        <div class="form-footer">
+          <p>Don't have an account? <span class="switch-form" id="switchToSignup">Sign up</span></p>
+          <a href="#" style="color: #001f54; display: block; margin-top: 0.5rem;">Forgot password?</a>
+        </div>
+        <div class="social-login">
+          <p>Or log in with</p>
+          <div class="social-login-buttons">
+            <button type="button" class="social-btn google-btn">
+              <i class="fab fa-google"></i> Google
+            </button>
+            <button type="button" class="social-btn facebook-btn">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeSignupModal">&times;</span>
+      <div class="modal-header">
+        <h2>Create an Account</h2>
+        <p>Join Sheriff Writers today</p>
+      </div>
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="signupName">Full Name</label>
+          <input type="text" id="signupName" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" placeholder="Create a password" required>
+        </div>
+        <div class="form-group">
+          <label for="signupConfirmPassword">Confirm Password</label>
+          <input type="password" id="signupConfirmPassword" placeholder="Confirm your password" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign Up</button>
+        <div class="form-footer">
+          <p>Already have an account? <span class="switch-form" id="switchToLogin">Log in</span></p>
+        </div>
+        <div class="social-login">
+          <p>Or sign up with</p>
+          <div class="social-login-buttons">
+            <button type="button" class="social-btn google-btn">
+              <i class="fab fa-google"></i> Google
+            </button>
+            <button type="button" class="social-btn facebook-btn">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <i class="fas fa-pen-fancy"></i>
+        Sheriff Writers
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#writers">Writers</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="btn btn-secondary" id="loginBtn">Login</button>
+        <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <h1>Empowering Your Academic Journey</h1>
+    <p>Expert assistance in academic writing, IT projects, and research solutions tailored to elevate your academic and professional success.</p>
+    <div class="hero-buttons">
+      <a href="#services" class="btn btn-primary">Explore Services</a>
+      <a href="#contact" class="btn btn-secondary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2 class="section-title">Who is Sheriff Writers?</h2>
+    <p class="section-subtitle">Your trusted partner in academic and professional excellence</p>
+    <div class="section-content">
+      <p>Sheriff Writers is your academic ally, delivering unparalleled writing, IT, and research solutions tailored to elevate your academic and professional journey. With our expertise and commitment to excellence, your success is not just a possibility--it's our mission.</p>
+      <p>Founded by a team of academic professionals, we understand the challenges students and professionals face in today's competitive environment. Our goal is to provide the support you need to excel in your academic pursuits and professional development.</p>
+    </div>
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3 class="feature-title">Excellence</h3>
+          <p>We strive for excellence in every project we undertake.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="feature-title">Timeliness</h3>
+          <p>We respect deadlines and deliver high-quality work on time.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h3 class="feature-title">Confidentiality</h3>
+          <p>Your privacy and information security are our top priorities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle">Comprehensive solutions for your academic and professional needs</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-pen-nib"></i>
+        </div>
+        <h3 class="service-title">Academic Writing</h3>
+        <p>Expert assistance with essays, research papers, dissertations, and more. Our writers are well-versed in various citation styles and academic disciplines.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h3 class="service-title">IT Solutions</h3>
+        <p>Professional help with programming assignments, software development projects, database design, and other IT-related tasks.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <h3 class="service-title">PowerPoint Presentations</h3>
+        <p>Engaging and visually appealing presentations that effectively communicate your ideas and impress your audience.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3 class="service-title">Research Assistance</h3>
+        <p>Comprehensive research support, including literature reviews, data analysis, and methodology development.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-edit"></i>
+        </div>
+        <h3 class="service-title">Editing & Proofreading</h3>
+        <p>Meticulous review of your work to ensure clarity, coherence, and error-free content that meets academic standards.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3 class="service-title">Admission Essays</h3>
+        <p>Compelling personal statements and admission essays that highlight your strengths and increase your chances of acceptance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-choose" class="why-choose">
+    <h2 class="section-title">Why Choose Our Essay Writers Service</h2>
+    <p class="section-subtitle">What sets us apart from the rest</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-user-graduate"></i>
+        </div>
+        <h3 class="feature-title">Expert Writers</h3>
+        <p>Our team comprises experienced professionals with advanced degrees in their respective fields.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h3 class="feature-title">Quality Assurance</h3>
+        <p>Rigorous quality checks to ensure your work meets the highest standards of academic excellence.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3 class="feature-title">Plagiarism-Free</h3>
+        <p>Original content guaranteed with comprehensive plagiarism checks on all deliverables.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <h3 class="feature-title">24/7 Support</h3>
+        <p>Our customer support team is available around the clock to address your concerns and queries.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <h3 class="feature-title">Free Revisions</h3>
+        <p>We offer free revisions to ensure your complete satisfaction with the final product.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <h3 class="feature-title">Affordable Pricing</h3>
+        <p>Competitive rates with flexible pricing options to suit your budget and requirements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Writers Section -->
+  <section id="writers">
+    <h2 class="section-title">Our Expert Writers</h2>
+    <p class="section-subtitle">Meet the professionals behind our exceptional services</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3 class="service-title">Dr. Austin M. Wilson</h3>
+        <p>Ph.D. in Literature with over 10 years of experience in academic writing and research. Specializes in literary analysis and critical theory.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3 class="service-title">Prof. Lewis Chen</h3>
+        <p>Master's in Computer Science with expertise in programming, database management, and software development. 8+ years of teaching experience.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3 class="service-title">Dr. Andie B. Rodriguez</h3>
+        <p>Ph.D. in Business Administration with extensive experience in business strategy, marketing, and management consulting.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3 class="service-title">David N. Thompson</h3>
+        <p>Master's in Psychology with a focus on research methodology and statistical analysis. Expert in psychological studies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <h2 class="section-title">Our Pricing</h2>
+    <p class="section-subtitle">Transparent and flexible pricing options to meet your needs</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <h3 class="pricing-name">Basic</h3>
+          <div class="pricing-price">$6<span class="pricing-period">/page</span></div>
+        </div>
+        <div class="pricing-features">
+          <ul>
+            <li>7-day delivery</li>
+            <li>Standard quality</li>
+            <li>Free plagiarism report</li>
+            <li>24/7 support</li>
+          </ul>
+          <a href="#" class="btn btn-primary pricing-btn">Get Started</a>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <h3 class="pricing-name">Standard</h3>
+          <div class="pricing-price">$10<span class="pricing-period">/page</span></div>
+        </div>
+        <div class="pricing-features">
+          <ul>
+            <li>5-day delivery</li>
+            <li>Premium quality</li>
+            <li>Free A.I report</li>
+            <li>Free plagiarism report</li>
+            <li>24/7 support</li>
+          </ul>
+          <a href="#" class="btn btn-primary pricing-btn">Get Started</a>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <h3 class="pricing-name">Premium</h3>
+          <div class="pricing-price">$15<span class="pricing-period">/page</span></div>
+        </div>
+        <div class="pricing-features">
+          <ul>
+            <li>3-day delivery</li>
+            <li>Top-tier quality</li>
+            <li>Free A.I report</li>
+            <li>Free plagiarism report</li>
+            <li>Free unlimited revisions</li>
+            <li>24/7 priority support</li>
+          </ul>
+          <a href="#" class="btn btn-primary pricing-btn">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <p class="section-subtitle">Real feedback from satisfied customers</p>
+    <div class="testimonials-container">
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          Sheriff Writers helped me complete my dissertation when I was running out of time. The quality of work was exceptional, and I received excellent feedback from my committee. I highly recommend their services to anyone struggling with academic writing.
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JD</div>
+          <div class="testimonial-info">
+            <h4>John Davis</h4>
+            <p>Ph.D. Student, Psychology</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          I was struggling with a complex programming assignment and Sheriff Writers came to my rescue. Their IT expert not only completed the project but also provided detailed explanations that helped me understand the concepts better. Outstanding service!
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RM</div>
+          <div class="testimonial-info">
+            <h4>Rachel Martinez</h4>
+            <p>Computer Science Major</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The PowerPoint presentation Sheriff Writers created for my business proposal was visually stunning and professionally crafted. It helped me secure the funding I needed for my startup. I'm incredibly grateful for their expertise and attention to detail.
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AK</div>
+          <div class="testimonial-info">
+            <h4>Alex Kim</h4>
+            <p>Entrepreneur</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Find answers to common questions about our services</p>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What services do you provide?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We offer a comprehensive range of academic and professional services, including academic writing (essays, research papers, dissertations), IT solutions (programming assignments, software development), PowerPoint presentations, research assistance, editing and proofreading, and admission essays.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do I place an order?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Placing an order is simple! First, sign up for an account on our website. Then, fill out the order form with your requirements, including the type of service, deadline, and any specific instructions. Once you've submitted your order and made the payment, we'll assign the most suitable expert to work on your project.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What makes your service unique?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Our dedication to quality, precision, and customer satisfaction sets us apart. We employ only highly qualified professionals with advanced degrees in their respective fields. We also offer a comprehensive quality assurance process, plagiarism-free guarantee, 24/7 customer support, and free revisions to ensure your complete satisfaction.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is my information kept confidential?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely! We have a strict confidentiality policy in place. Your personal information and order details are never shared with third parties. We use secure payment methods and encryption to protect your data. Your privacy is our priority.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What if I'm not satisfied with the work?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We strive for 100% customer satisfaction. If you're not completely satisfied with the work delivered, you can request revisions, which are free of charge. We'll make the necessary adjustments according to your feedback until you're happy with the final product.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do you offer urgent services?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, we understand that sometimes you need work completed quickly. We offer urgent services with delivery times as short as 24 hours, depending on the complexity and length of the project. Please note that urgent services may have higher rates due to the expedited timeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <h2>Ready to Excel in Your Academic Journey?</h2>
+    <p>Join thousands of satisfied students and professionals who have trusted Sheriff Writers for their academic and professional needs.</p>
+    <a href="#" class="btn btn-primary">Get Started Today</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>About Us</h3>
+        <p>Sheriff Writers is your trusted partner for academic excellence, providing high-quality writing, IT solutions, and research assistance to students and professionals worldwide.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="#">Academic Writing</a></li>
+          <li><a href="#">IT Solutions</a></li>
+          <li><a href="#">PowerPoint Presentations</a></li>
+          <li><a href="#">Research Assistance</a></li>
+          <li><a href="#">Editing & Proofreading</a></li>
+          <li><a href="#">Admission Essays</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <ul>
+          <li><i class="fas fa-envelope"></i> @sheriffwriters@gmail.com</li>
+          <li><i class="fas fa-phone"></i> +254 (706) 231-862</li>
+          <li><i class="fas fa-map-marker-alt"></i> 6th Avenue, Kahawa Downs, Nairobi City, KN 78901</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sheriff Writers. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Code of Conduct</a>
+        <a href="#">Refund Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all FAQ items
+        faqItems.forEach(faqItem => {
+          faqItem.classList.remove('active');
+        });
+        
+        // If the clicked item wasn't active, make it active
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          if (mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+          }
+        }
+      });
+    });
+
+    // Initialize the first FAQ item as active
+    if (faqItems.length > 0) {
+      faqItems[0].classList.add('active');
+    }
+
+    // Login and Signup Modal Functionality
+    const loginBtn = document.getElementById('loginBtn');
+    const signupBtn = document.getElementById('signupBtn');
+    const loginModal = document.getElementById('loginModal');
+    const signupModal = document.getElementById('signupModal');
+    const closeLoginModal = document.getElementById('closeLoginModal');
+    const closeSignupModal = document.getElementById('closeSignupModal');
+    const switchToSignup = document.getElementById('switchToSignup');
+    const switchToLogin = document.getElementById('switchToLogin');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+
+    // Open login modal
+    loginBtn.addEventListener('click', () => {
+      loginModal.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    });
+
+    // Open signup modal
+    signupBtn.addEventListener('click', () => {
+      signupModal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    });
+
+    // Close login modal
+    closeLoginModal.addEventListener('click', () => {
+      loginModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    // Close signup modal
+    closeSignupModal.addEventListener('click', () => {
+      signupModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    // Switch from login to signup
+    switchToSignup.addEventListener('click', () => {
+      loginModal.style.display = 'none';
+      signupModal.style.display = 'block';
+    });
+
+    // Switch from signup to login
+    switchToLogin.addEventListener('click', () => {
+      signupModal.style.display = 'none';
+      loginModal.style.display = 'block';
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+      if (e.target === loginModal) {
+        loginModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+      if (e.target === signupModal) {
+        signupModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Form submission handling
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+      
+      // Here you would typically send the login data to your server
+      console.log('Login attempt:', { email, password });
+      
+      // For demo purposes, just close the modal and show an alert
+      alert('Login successful!');
+      loginModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+      const confirmPassword = document.getElementById('signupConfirmPassword').value;
+      
+      // Simple password validation
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+      
+      // Here you would typically send the signup data to your server
+      console.log('Signup attempt:', { name, email, password });
+      
+      // For demo purposes, just close the modal and show an alert
+      alert('Account created successfully!');
+      signupModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+  </script>
+</body>
+</html>
